@@ -1,9 +1,10 @@
+#define _CRT_NO_SECURE_WARNING
 #include <stdio.h>
 
 int IsInThree(int i) {
     int sum = 0;
     while (i != 0) {
-        if ((i % 10) % 3 == 0)
+        if ((i % 10) % 3 == 0 && i % 10 != 0)
             sum++;
         i = i / 10;
     }
