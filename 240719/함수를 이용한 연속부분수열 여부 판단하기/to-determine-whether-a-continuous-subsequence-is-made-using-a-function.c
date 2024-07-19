@@ -1,10 +1,8 @@
 #include <stdio.h>
 
-int main() {
-    int n1, n2, cnt = 0;
-    int arr1[100], arr2[100];
-    scanf("%d %d", &n1, &n2);
-    for(int i = 0; i < n1; i++)
+int IsContinue(int n1, int n2){
+        int arr1[100], arr2[100];
+            for(int i = 0; i < n1; i++)
         scanf("%d", &arr1[i]);
     for(int i = 0; i < n2; i++)
         scanf("%d", &arr2[i]);
@@ -13,13 +11,17 @@ int main() {
         for(int j = 0; j < n1; j++){
             if(arr1[j] == arr2[i]){
                 if(arr1[j + 1] == arr2[i + 1])
-                    cnt++;
+                    return 1;
             }
         }
-        if(cnt > 0)
-            break;
     }
-    if(cnt > 0)
+    return 0;
+}
+
+int main() {
+    int n1, n2, cnt = 0;
+    scanf("%d %d", &n1, &n2);
+    if(IsContinue(n1, n2) == 1)
         printf("Yes");
     else
         printf("No");
