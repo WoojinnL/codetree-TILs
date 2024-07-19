@@ -19,13 +19,13 @@ int main() {
     scanf("%d %c  %d", &a, &o, &c);
     switch(o){
         case '+' :
-            printf("%d %c %d = %d", a, o, c, Multi(a, c));
+            printf("%d %c %d = %d", a, o, c, Plus(a, c));
             break;
         case '-' :
-            printf("%d %c %d = %d", a, o, c, Multi(a, c));
+            printf("%d %c %d = %d", a, o, c, Minus(a, c));
             break;
         case '/' :
-            printf("%d %c %d = %d", a, o, c, Multi(a, c));
+            printf("%d %c %d = %d", a, o, c, Devide(a, c));
             break;
         case '*' :
             printf("%d %c %d = %d", a, o, c, Multi(a, c));
