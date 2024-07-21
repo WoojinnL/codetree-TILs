@@ -12,7 +12,7 @@ int Gcd(int m, int n) {
 int FindGcd(int Len, int sum) {
     int cnt = 0;
     if (Len == 0)
-        return sum;
+        return 0;
     for (int i = Len - 1; i > 0; i--) {
         int gcd = Gcd(A[Len], A[Len - i]);
         if (gcd != 1) {
@@ -21,18 +21,19 @@ int FindGcd(int Len, int sum) {
             cnt++;
         }
     }
-    if (cnt == 0) {
-        sum = sum * A[Len];
-    }
     return FindGcd(Len - 1, sum);
 }
 
 int main() {
-    int n;
+    int n, sum= 1;
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &A[i]);
     }
-    printf("%d", FindGcd(n - 1, 1));
+    FindGcd(n - 1, 1);
+    for (int i = 0; i < n; i++) {
+        sum *= A[i];
+    }
+    printf("%d", sum);
     return 0;
 }
