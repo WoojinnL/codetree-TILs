@@ -17,13 +17,20 @@ void Sort(int arr[], int n){
 }
 
 int main() {
-    int n;
+    int n, Max = 0;
     int arr[1000];
     scanf("%d", &n);
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n * 2; i++){
         scanf("%d", &arr[i]);
     }
-    Sort(arr, n);
-    printf("%d", arr[0] + arr[n - 1]);
+    Sort(arr, n * 2);
+    for(int i = 0; i < n; i++){
+        if(Max == 0)
+            Max = arr[0]+arr[2*n - 1];
+        
+        if(Max < arr[i] + arr[2*n - i - 1])
+            Max = arr[i] + arr[2*n - i - 1];
+    }
+    printf("%d", Max);
     return 0;
 }
