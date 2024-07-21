@@ -20,8 +20,8 @@ int Check(char str1[], char str2[], int len) {
 }
 
 int main() {
-    char str1[100000];
-    char str2[100000];
+    char str1[100001];
+    char str2[100001];
     scanf("%s", str1);
     scanf("%s", str2);
 
