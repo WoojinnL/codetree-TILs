@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void sort(char str[], int len) {
-    char temp;
-    for (int i = 0; i < len; i++) {
-        for (int j = i + 1; j < len; j++) {
-            if (str[i] > str[j]) {
-                temp = str[i];
-                str[i] = str[j];
-                str[j] = temp;
-            }
-        }
-    }
+int compare(const void* a, const void* b) {
+    if (*(char*)a > *(char*)b)
+        return 1;
+    else if (*(char*)a < *(char*)b)
+        return -1;
+    else
+        return 0;
 }
 
 int Check(char str1[], char str2[], int len) {
@@ -34,8 +31,8 @@ int main() {
     else
         len = strlen(str2);
 
-    sort(str1, len);
-    sort(str2, len);
+    qsort(str1, len, sizeof(char), compare);
+    qsort(str2, len, sizeof(char), compare);
 
     if (Check(str1, str2, len) == 1)
         printf("Yes");
