@@ -12,8 +12,8 @@ int Gcd(int m, int n) {
 int FindGcd(int Len, int sum) {
     int cnt = 0;
     if (Len == 0)
-        return 0;
-    for (int i = Len - 1; i > 0; i--) {
+        return ;
+    for (int i = Len; i > 0; i--) {
         int gcd = Gcd(A[Len], A[Len - i]);
         if (gcd != 1) {
             A[Len - i] /= gcd;
