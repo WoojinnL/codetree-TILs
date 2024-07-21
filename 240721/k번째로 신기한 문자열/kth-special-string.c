@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -20,7 +19,7 @@ void sort(char str[][101], int n) {
 }
 
 int main() {
-    int n, k, cnt = 0;
+    int n, k, cnt = 0, cnt2 = 0;
     char T[101];
     scanf("%d %d", &n, &k);
     scanf("%s", T);
@@ -38,12 +37,12 @@ int main() {
                 cnt++;
         }
         if (cnt == len) {
-            strcpy(Final[i], str[i]);
-            cnt = 0;
+            strcpy(Final[cnt2], str[i]);
+            cnt2++;
         }
         cnt = 0;
     }
-
+    
     printf("%s", Final[k - 1]);
     return 0;
 }
