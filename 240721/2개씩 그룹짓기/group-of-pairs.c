@@ -18,7 +18,7 @@ void Sort(int arr[], int n){
 
 int main() {
     int n, Max = 0;
-    int arr[1000];
+    int arr[2000];
     scanf("%d", &n);
     for(int i = 0; i < n * 2; i++){
         scanf("%d", &arr[i]);
