@@ -20,7 +20,7 @@ int compare(const void *a, const void *b){
 int main() {
     int n;
     scanf("%d", &n);
-    Student s[5];
+    Student s[10];
     for(int i = 0; i < n; i++){
         scanf("%s %d %d", s[i].name, &s[i].height, &s[i].weight);
     }
